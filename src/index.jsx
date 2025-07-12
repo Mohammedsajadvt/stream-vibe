@@ -1,0 +1,5 @@
+export { default as Subscriptions } from './pages/Subscriptions'
+export { default as Home } from './pages/Home'
+export { default as MoviesAndShows } from './pages/MoviesAndShows'
+export { default as Support } from './pages/Support'
+export { default as Header } from './components/Header'
