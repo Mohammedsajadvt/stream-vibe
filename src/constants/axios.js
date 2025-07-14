@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseUrl, API_KEY } from "../utils/constants";
+import { baseUrl, API_KEY } from "./api";
 
 const tmdbInstance = axios.create({
     baseURL: baseUrl,
