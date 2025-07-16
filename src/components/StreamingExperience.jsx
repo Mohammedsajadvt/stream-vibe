@@ -1,5 +1,6 @@
 import React from 'react'
 import DeviceCard from '../components/DeviceCard';
+import  Container  from '../assets/Container.png';
 function StreamingExperience() {
     return (
         <div className='flex pt-20 md:pl-20 md:pr-20 pr-2 pl-2 justify-between gap-45'>
@@ -10,7 +11,7 @@ function StreamingExperience() {
                 </div>
                 <p className='text-[#999999]   pt-3 text-[13px] font-light'>With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment.</p>
                 <DeviceCard />
-
+                <img src={Container} alt="container" className='pt-20'/>
             </div>
         </div>
     )
