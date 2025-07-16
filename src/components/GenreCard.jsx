@@ -1,12 +1,18 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react'; // You can use any icon lib
+import { ArrowRight } from 'lucide-react'; 
 import { imageUrl } from '../constants/api';
-
-function GenreCard({ genreName, movies = [] }) {
+import { Skeleton } from '../components/ui/skeleton';
+function GenreCard({ genreName, movies = [] ,loading}) {
   return (
-    <div className="bg-[#1A1A1A] rounded-xl px-4 w-[200px] py-4 flex flex-col justify-between">
+    <div className="bg-[#1A1A1A] rounded-xl px-4 min-w-[170px] flex-shrink-0 w-[170px] border border-[#262626] py-4 flex flex-col justify-between">
       <div className="grid grid-cols-2 grid-rows-2 gap-1">
-        {movies.slice(0, 4).map((movie, index) => (
+        {
+        loading? Array.from({length:4}).map((_,index)=>(
+          <div key={index} className="">
+          <Skeleton className="h-25  w-full bg-[#262626]" />
+        </div>
+        ))
+        :movies.slice(0, 4).map((movie, index) => (
           <img
             key={index}
             src={`${imageUrl}${movie.poster_path}`}

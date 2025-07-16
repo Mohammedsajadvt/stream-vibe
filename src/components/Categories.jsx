@@ -7,7 +7,7 @@ function Categories() {
     const dispatch = useDispatch();
     const [currentPage, setCurrentPage] = useState(1);
     const genresPerPage = 6;
-    const { moviesList, moviesByGenre, loading, error } = useSelector((state) => state.movies);
+    const { moviesList, moviesByGenre, loading } = useSelector((state) => state.movies);
     useEffect(() => {
         dispatch(fetchMovieList());
     }, [dispatch]);
@@ -33,9 +33,9 @@ function Categories() {
                     <AppPagination totalPages={Math.ceil(moviesList.length / genresPerPage)} currentPage={currentPage} onPageChange={(page) => setCurrentPage(page)} />
                 </div>
             </div>
-            <div className='flex  overflow-x-auto scrollbar-hide md:pl-20 md:pr-20 pr-2 pl-2 gap-4 pt-10'>
+            <div className='flex  overflow-x-auto  scrollbar-hide md:pl-20 md:pr-20 pr-2 pl-2 gap-4 pt-10'>
                 {moviesList.slice((currentPage - 1) * genresPerPage, currentPage * genresPerPage).map((genre) => (
-                    <GenreCard key={genre.id} genreName={genre.name} movies={moviesByGenre[genre.id] || []} />
+                    <GenreCard key={genre.id} genreName={genre.name} movies={moviesByGenre[genre.id] || []} loading={loading} />
                 ))}
             </div>
             <div className="m-auto flex w-60 sm:hidden justify-center pt-4">
@@ -52,14 +52,3 @@ function Categories() {
 
 export default Categories
 
-
-
-//  {(moviesByGenre[genre.id] || []).slice(0, 4).map((movie) => (
-//         <div key={movie.id} className="bg-gray-800 p-2 rounded-md">
-//           <img
-//             src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-//             alt={movie.title}
-//             className="rounded-md w-full h-auto"
-//           />
-//         </div>
-//       ))}
