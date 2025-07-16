@@ -1,11 +1,13 @@
 import React from "react";
-import { Header } from "../index";
+import { Header ,Footer} from "../index";
 
 function Support() {
     return (
         <>
             <Header />
             Support
+                  <Footer/>
+
         </>
     );
 }
