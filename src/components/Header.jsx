@@ -15,7 +15,7 @@ const getNavLinkClass = ({ isActive }) =>
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="w-full fixed  bg-opacity-60 text-white">
+    <header className="w-full fixed bg-[#1F1F1F]/30 text-white">
       <div className="flex justify-between items-center py-2 pr-2 pl-2 md:pr-20 md:pl-20">
         <div>
           <img src={logo} alt="" className="w-[120px] md:w-[160px]" />

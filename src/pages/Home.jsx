@@ -3,6 +3,7 @@ import { Header } from '../index'
 import HeroSection from '../components/HeroSection';
 import IntroSection from '../components/IntroSection';
 import Categories from '../components/Categories';
+import StreamingExperience from '../components/StreamingExperience';
 function Home() {
   return (
     <>
@@ -10,6 +11,7 @@ function Home() {
       <HeroSection/>
       <IntroSection/>
       <Categories/>
+      <StreamingExperience/>
     </>
   )
 }
